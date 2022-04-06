@@ -10,6 +10,7 @@ public class Camera : MonoBehaviour
 
     void LateUpdate()
     {
+        lookAt = GameObject.Find("Knight").transform;
         Vector3 delta = Vector3.zero;
 
         //Checking to see if we are inside the bounds on the X axis

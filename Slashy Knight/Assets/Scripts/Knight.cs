@@ -12,7 +12,16 @@ public class Knight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>(); 
+        boxCollider = GetComponent<BoxCollider2D>();
+        DontDestroyOnLoad(gameObject);
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        FindStartPos();
+    }
+    void FindStartPos()
+    {
+        transform.position = GameObject.FindWithTag("StartPos").transform.position;
     }
 
     private void FixedUpdate()
