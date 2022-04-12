@@ -13,10 +13,8 @@ public class Portal : MonoBehaviour
     {
         
         GameObject collisionGameObject = collision.gameObject;
-        Debug.Log(collisionGameObject.name);
         if (collisionGameObject.name == "Knight")
         {
-            Debug.Log("Hit");
             LoadScene();
         }
     }
