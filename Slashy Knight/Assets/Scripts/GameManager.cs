@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level3Levers : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     private GameObject Knight;
     private GameObject Lever1;
@@ -41,15 +41,27 @@ public class Level3Levers : MonoBehaviour
     {
         if (Vector2.Distance(Knight.transform.position, Lever1.transform.position) < 0.3f)
         {
-            doorsClosed.SetActive(false);
-            doorsOpen.SetActive(true);
-            returningPortal.SetActive(true);
-            nextLevelPortal.SetActive(true);
-            fakePortal1.SetActive(false);
-            fakePortal2.SetActive(false);
-            fakePortal3.SetActive(false);
-            fakePortal4.SetActive(false);
-            fakePortal5.SetActive(false);
+            part1.SetActive(false);
+            part2.SetActive(true);
+            fakePortal2.SetActive(true);
+        }
+        if (Vector2.Distance(Knight.transform.position, Lever2.transform.position) < 0.3f)
+        {
+            part2.SetActive(false);
+            part3.SetActive(true);
+            fakePortal3.SetActive(true);
+        }
+        if (Vector2.Distance(Knight.transform.position, Lever3.transform.position) < 0.3f)
+        {
+            part3.SetActive(false);
+            part4.SetActive(true);
+            fakePortal4.SetActive(true);
+        }
+        if (Vector2.Distance(Knight.transform.position, Lever4.transform.position) < 0.3f)
+        {
+            part4.SetActive(false);
+            part5.SetActive(true);
+            finalPortal.SetActive(true);
         }
     }
 }

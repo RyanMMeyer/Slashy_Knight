@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iLevelToLoad: 0
-  sLevelToLoad: Level3
+  sLevelToLoad: FinalLevel
   levelInt: 0
 --- !u!61 &502210266
 BoxCollider2D:
