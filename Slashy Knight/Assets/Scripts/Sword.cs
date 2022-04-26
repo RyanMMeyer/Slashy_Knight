@@ -6,12 +6,14 @@ using UnityEditor;
 public class Sword : MonoBehaviour
 {
     public GameObject Knight;
-    Vector3 mousePosition;
+    public Vector3 mousePosition;
     public float moveSpeed = 1.0f;
     Rigidbody2D rb;
     Vector2 position = new Vector2(0.8f, 0.5f);
     Vector2 lookDirection;
     float lookAngle;
+    public Vector3 newVector;
+    Vector3 newPos;
 
     private void Start()
     {
@@ -22,17 +24,16 @@ public class Sword : MonoBehaviour
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
-        
+        //position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
+        newVector = (mousePosition - Knight.transform.position);
+        newPos = Knight.transform.position + newVector;
+        transform.position = newPos;
+        //rb.MovePosition(newPos);
     }
 
     private void FixedUpdate()
     {
-        if (Vector2.Distance(Knight.transform.position, position) <= 0.3f)
-        {
-            rb.MovePosition(position);
-        }
-
+         //rb.MovePosition(newPos);
     }
 
 }
