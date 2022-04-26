@@ -8,6 +8,8 @@ public class Knight : MonoBehaviour
     private RaycastHit2D hit;
     private Vector3 moveDelta;
     private BoxCollider2D boxCollider;
+    private int healthPoints;
+    private int damagePoints;
 
     // Start is called before the first frame update
     void Start()
