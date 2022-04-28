@@ -18,22 +18,20 @@ public class Sword : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        //position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
-        newVector = (mousePosition - Knight.transform.position);
+        mousePosition = new Vector3(mousePosition.x, mousePosition.y, 0);
+        newVector = (mousePosition - Knight.transform.position).normalized * 0.13f;
         newPos = Knight.transform.position + newVector;
         transform.position = newPos;
-        //rb.MovePosition(newPos);
-    }
+        transform.rotation = Quaternion.LookRotation(newVector, Vector3.up);
+    
 
-    private void FixedUpdate()
-    {
-         //rb.MovePosition(newPos);
     }
 
 }
