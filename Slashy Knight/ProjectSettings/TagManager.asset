@@ -50,3 +50,6 @@ TagManager:
   - name: Actor
     uniqueID: 2332112279
     locked: 0
+  - name: Health
+    uniqueID: 574274195
+    locked: 0
