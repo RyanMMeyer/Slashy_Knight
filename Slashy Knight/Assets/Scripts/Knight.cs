@@ -10,12 +10,15 @@ public class Knight : MonoBehaviour
     private BoxCollider2D boxCollider;
     private int healthPoints;
     private int damagePoints;
+    public Health health;
+
 
     // Start is called before the first frame update
     void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         DontDestroyOnLoad(gameObject);
+        health = GetComponent<Health>();
     }
     private void OnLevelWasLoaded(int level)
     {
@@ -43,6 +46,13 @@ public class Knight : MonoBehaviour
         if (hit.collider == null)
         {
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+        }
+    }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Slime Enemy")
+        {
+            health.TakeDamage(1);
         }
     }
 }
