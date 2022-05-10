@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private bool dead;
     public GameObject slimeDead;
+    public GameObject slime;
     
     public void Start()
     {
@@ -38,7 +39,6 @@ public class Enemy : MonoBehaviour
             slimeDead.transform.position = gameObject.transform.position;
             dead = true;
             anim.SetBool("IsDead", true);
-            gameObject.SetActive(false);
             slimeDead.SetActive(true);
         }
     }
@@ -50,4 +50,5 @@ public class Enemy : MonoBehaviour
             health -= 1.0f;
         }
     }
+
 }

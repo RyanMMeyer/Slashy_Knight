@@ -674,8 +674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6980fbe38f2a454ba7c563f2a796f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Knight: {fileID: 0}
   health: 5
+  slimeDead: {fileID: 0}
 --- !u!212 &489544043
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5751,8 +5751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6980fbe38f2a454ba7c563f2a796f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Knight: {fileID: 0}
   health: 5
+  slimeDead: {fileID: 0}
 --- !u!212 &1698193645
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5851,8 +5851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6980fbe38f2a454ba7c563f2a796f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Knight: {fileID: 0}
   health: 5
+  slimeDead: {fileID: 0}
 --- !u!212 &1717825887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6211,8 +6211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6980fbe38f2a454ba7c563f2a796f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Knight: {fileID: 0}
   health: 5
+  slimeDead: {fileID: 0}
 --- !u!212 &1781811533
 SpriteRenderer:
   m_ObjectHideFlags: 0
