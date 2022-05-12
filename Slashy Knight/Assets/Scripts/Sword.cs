@@ -14,11 +14,13 @@ public class Sword : MonoBehaviour
     float lookAngle;
     public Vector3 newVector;
     Vector3 newPos;
+    private Health health;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
+        health = GetComponent<Health>();
     }
 
     private void Update()
@@ -30,7 +32,6 @@ public class Sword : MonoBehaviour
         newPos = Knight.transform.position + newVector;
         transform.position = newPos;
         transform.rotation = Quaternion.LookRotation(newVector, Vector3.up);
-    
 
     }
 }

@@ -8816,7 +8816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6980fbe38f2a454ba7c563f2a796f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 5
+  slimeDead: {fileID: 0}
 --- !u!50 &2086838485
 Rigidbody2D:
   serializedVersion: 4

@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Knight : MonoBehaviour
 {
-    public int coins;
     private RaycastHit2D hit;
     private Vector3 moveDelta;
     private BoxCollider2D boxCollider;
-    private int healthPoints;
-    private int damagePoints;
-    public Health health;
-
+    private Health health;
+    private bool dead;
 
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         boxCollider = GetComponent<BoxCollider2D>();
         DontDestroyOnLoad(gameObject);
         health = GetComponent<Health>();
@@ -31,26 +29,33 @@ public class Knight : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
-
-        moveDelta = new Vector3(x, y, 0);
-
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
-        if (hit.collider == null)
+        if (!dead)
         {
-            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+            float x = Input.GetAxisRaw("Horizontal");
+            float y = Input.GetAxisRaw("Vertical");
+
+            moveDelta = new Vector3(x, y, 0);
+
+            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+            if (hit.collider == null)
+            {
+                transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+            }
+
+            hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+            if (hit.collider == null)
+            {
+                transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+            }
         }
-
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
-        if (hit.collider == null)
+        if (health.currentHealth == 0)
         {
-            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+            dead = true;
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Slime Enemy")
+        if (collision.gameObject.tag == "Slime")
         {
             health.TakeDamage(1);
         }

@@ -16,18 +16,16 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private bool dead;
     public GameObject slimeDead;
-    public GameObject slime;
     
     public void Start()
     {
-        slimeDead.SetActive(false);
         dead = false;
         Knight = GameObject.Find("Knight");
         anim = GetComponent<Animator>();
     }
     public void Update()
     {
-        if (dead == false)
+        if (!dead)
         {
             if (Vector2.Distance(Knight.transform.position, gameObject.transform.position) < 0.8f)
             {
@@ -36,10 +34,10 @@ public class Enemy : MonoBehaviour
         }
         if (health == 0.0f)
         {
-            slimeDead.transform.position = gameObject.transform.position;
+            Instantiate(slimeDead, gameObject.transform.position, gameObject.transform.rotation);
             dead = true;
             anim.SetBool("IsDead", true);
-            slimeDead.SetActive(true);
+            Destroy(gameObject);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
