@@ -14,9 +14,12 @@ public class Enemy : MonoBehaviour
     public float health = 5.0f;
 
     private Animator anim;
-    private bool dead;
+    public bool dead;
     public GameObject slimeDead;
-    
+
+    public AudioClip clip;
+    public AudioSource source;
+
     public void Start()
     {
         dead = false;
@@ -38,6 +41,7 @@ public class Enemy : MonoBehaviour
             dead = true;
             anim.SetBool("IsDead", true);
             Destroy(gameObject);
+            source. PlayOneShot(clip);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
