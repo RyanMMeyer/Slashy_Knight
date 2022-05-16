@@ -1,22 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 
-public class Enemy : MonoBehaviour
+public class BossSlime : MonoBehaviour
 {
-    private bool chasting;
-    private bool collidingWithPlayer;
     private GameObject Knight;
-    private Vector3 startingPosition;
+    public GameObject slime;
 
     private BoxCollider2D hitBox;
-    public float health = 5.0f;
+    public float health = 50.0f;
 
     private Animator anim;
     private bool dead;
     public GameObject slimeDead;
-    
+    private bool spawned = false;
+
     public void Start()
     {
         dead = false;
@@ -32,12 +30,12 @@ public class Enemy : MonoBehaviour
                 gameObject.transform.Translate((Knight.transform.position - gameObject.transform.position) * Time.deltaTime * 1.2f);
             }
         }
-        if (health == 0.0f)
+        if (health <= 25.0f && !spawned)
         {
-            Instantiate(slimeDead, gameObject.transform.position, gameObject.transform.rotation);
-            dead = true;
-            anim.SetBool("IsDead", true);
-            Destroy(gameObject);
+            Instantiate(slime, gameObject.transform.position + new Vector3(0.25f, 0, 0), slime.transform.rotation);
+            Instantiate(slime, gameObject.transform.position + new Vector3(-0.25f, 0, 0), slime.transform.rotation);
+            spawned = true;
+            gameObject.transform.Translate(new Vector3(0.1f, 8.185f, 0f) * Time.deltaTime);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
