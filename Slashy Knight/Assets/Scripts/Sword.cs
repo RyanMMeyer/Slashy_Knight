@@ -34,4 +34,4 @@ public class Sword : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(newVector, Vector3.up);
 
     }
-}
+ }
