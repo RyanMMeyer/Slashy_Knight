@@ -7,18 +7,13 @@ public class Sword : MonoBehaviour
 {
     public GameObject Knight;
     public Vector3 mousePosition;
-    public float moveSpeed = 1.0f;
-    Rigidbody2D rb;
     Vector2 position = new Vector2(0.8f, 0.5f);
-    Vector2 lookDirection;
-    float lookAngle;
     public Vector3 newVector;
     Vector3 newPos;
     private Health health;
 
-    private void Start()
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
         DontDestroyOnLoad(gameObject);
         health = GetComponent<Health>();
     }
@@ -32,6 +27,9 @@ public class Sword : MonoBehaviour
         newPos = Knight.transform.position + newVector;
         transform.position = newPos;
         transform.rotation = Quaternion.LookRotation(newVector, Vector3.up);
-
+    //    if (health.currentHealth == 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
     }
  }

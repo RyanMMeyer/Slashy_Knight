@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8732,6 +8732,7 @@ GameObject:
   - component: {fileID: 2086838486}
   - component: {fileID: 2086838485}
   - component: {fileID: 2086838484}
+  - component: {fileID: 2086838488}
   m_Layer: 0
   m_Name: King Slime
   m_TagString: Untagged
@@ -8817,8 +8818,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slime: {fileID: 5052303605570890637, guid: 54cab4e89f86f43489864c2b17069627, type: 3}
-  health: 50
-  slimeDead: {fileID: 0}
+  health: 75
+  slimeDead: {fileID: 8359282120744912626, guid: 26363a97a0a547d43b16f6ce32b00ca4, type: 3}
+  princess: {fileID: 4062969648761870109, guid: acb9b047d550b864db6d1852905b6aa9, type: 3}
 --- !u!50 &2086838485
 Rigidbody2D:
   serializedVersion: 4
@@ -8892,6 +8894,25 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+--- !u!95 &2086838488
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086838481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 207acd5b2f3cfff43a81e4b34b430687, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2146117271
 GameObject:
   m_ObjectHideFlags: 0

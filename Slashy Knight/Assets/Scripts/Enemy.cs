@@ -5,26 +5,21 @@ using UnityEngine.Animations;
 
 public class Enemy : MonoBehaviour
 {
-    private bool chasting;
-    private bool collidingWithPlayer;
     private GameObject Knight;
-    private Vector3 startingPosition;
 
-    private BoxCollider2D hitBox;
     public float health = 5.0f;
 
     private Animator anim;
     public bool dead;
     public GameObject slimeDead;
-
-    public AudioClip clip;
-    public AudioSource source;
+    private Health playerHealth;
 
     public void Start()
     {
         dead = false;
         Knight = GameObject.Find("Knight");
         anim = GetComponent<Animator>();
+        //playerHealth = GetComponent<Health>();
     }
     public void Update()
     {
@@ -41,8 +36,11 @@ public class Enemy : MonoBehaviour
             dead = true;
             anim.SetBool("IsDead", true);
             Destroy(gameObject);
-            source. PlayOneShot(clip);
         }
+        //if (playerHealth.currentHealth == 0)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

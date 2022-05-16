@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 3661052}
   - component: {fileID: 3661051}
   - component: {fileID: 3661053}
+  - component: {fileID: 3661050}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -141,6 +142,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3661050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3661049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc5247b9c5e3174ab412ac0b488cf30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 0
 --- !u!212 &3661051
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -180,7 +194,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1962855017
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 5eb45dd5e88573748879cb337ededa74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -600,7 +614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Knight: {fileID: 1448378419}
   mousePosition: {x: 0, y: 0, z: 0}
-  moveSpeed: 1
   newVector: {x: 0, y: 0, z: 0}
 --- !u!4 &598342078
 Transform:
@@ -609,14 +622,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598342076}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.822, y: 0.495, z: -1}
+  m_LocalRotation: {x: 0.3067585, y: 0.6486415, z: -0.29778722, w: 0.62967163}
+  m_LocalPosition: {x: 0.6732, y: 0.5435, z: -0.9998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3661052}
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.591, y: 92.679, z: 2.07}
 --- !u!1 &601751406
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iLevelToLoad: 0
-  sLevelToLoad: Level1
+  sLevelToLoad: FinalLevel
   levelInt: 0
 --- !u!4 &658076510
 Transform:
@@ -3986,7 +3999,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1962855017
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 90919edd0bf23fc468d78739042b8e18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

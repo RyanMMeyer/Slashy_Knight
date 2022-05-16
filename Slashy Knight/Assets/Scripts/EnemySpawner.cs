@@ -6,17 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject slime;
-    //public AudioSource source;
-    //public AudioClip clip;
 
-    void Update()
-    {
-
-        //if (slime.dead)
-        //{
-        //    source.PlayOneShot(clip);
-        //}
-    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;

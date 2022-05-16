@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Knight : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class Knight : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Health health;
     private bool dead;
+    
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dead = false;
         boxCollider = GetComponent<BoxCollider2D>();
@@ -48,9 +50,11 @@ public class Knight : MonoBehaviour
                 transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
             }
         }
-        if (health.currentHealth == 0)
+        if (health.currentHealth == 0 && !dead)
         {
             dead = true;
+            SceneManager.LoadScene("Game Over");
+            Destroy(gameObject);
         }
     }
     public void OnCollisionEnter2D(Collision2D collision)
