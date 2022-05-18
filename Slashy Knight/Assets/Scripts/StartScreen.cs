@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class StartScreen : MonoBehaviour
 {
     public Button button;
-
     private void Start()
     {
         button = GetComponent<Button>();
@@ -15,5 +14,9 @@ public class StartScreen : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void quitButton()
+    {
+        Application.Quit();
     }
 }

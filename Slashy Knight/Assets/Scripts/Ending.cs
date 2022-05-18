@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
+public class Ending : MonoBehaviour
 {
     public Button button;
 
@@ -17,6 +17,7 @@ public class GameOver : MonoBehaviour
         SceneManager.MoveGameObjectToScene(GameObject.Find("Sword Controller"), SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(GameObject.Find("Enemy Spawner"), SceneManager.GetActiveScene());
         SceneManager.MoveGameObjectToScene(GameObject.Find("Screen"), SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.Find("Knight"), SceneManager.GetActiveScene());
         SceneManager.LoadScene(0);
     }
 }

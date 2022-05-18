@@ -51,14 +51,19 @@ public class BossSlime : MonoBehaviour
         }
         if (health <= 0.0f)
         {
+            anim.SetBool("IsDead", true);
             Instantiate(slimeDead, gameObject.transform.position, gameObject.transform.rotation);
             Instantiate(princess, gameObject.transform.position, gameObject.transform.rotation);
-            anim.SetBool("IsDead", true);
-            Destroy(gameObject);
-            SceneManager.LoadScene("Ending");
+            gameObject.SetActive(false);
+            Invoke("Ending", 3.0f);
         }
     }
 
+    void Ending()
+    {
+        Debug.Log("working");
+        SceneManager.LoadScene("Ending");
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.name);

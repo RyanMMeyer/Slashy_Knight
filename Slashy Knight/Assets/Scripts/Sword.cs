@@ -27,9 +27,5 @@ public class Sword : MonoBehaviour
         newPos = Knight.transform.position + newVector;
         transform.position = newPos;
         transform.rotation = Quaternion.LookRotation(newVector, Vector3.up);
-    //    if (health.currentHealth == 0)
-    //    {
-    //        Destroy(gameObject);
-    //    }
     }
  }
