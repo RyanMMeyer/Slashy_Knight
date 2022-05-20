@@ -12,14 +12,12 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     public bool dead;
     public GameObject slimeDead;
-    private Health playerHealth;
 
     public void Start()
     {
         dead = false;
         Knight = GameObject.Find("Knight");
         anim = GetComponent<Animator>();
-        //playerHealth = GetComponent<Health>();
     }
     public void Update()
     {
@@ -37,14 +35,9 @@ public class Enemy : MonoBehaviour
             anim.SetBool("IsDead", true);
             Destroy(gameObject);
         }
-        //if (playerHealth.currentHealth == 0)
-        //{
-        //    Destroy(gameObject);
-        //}
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "Sword")
         {
             health -= 1.0f;

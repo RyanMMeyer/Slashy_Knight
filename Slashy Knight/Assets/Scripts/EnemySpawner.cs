@@ -13,8 +13,6 @@ public class EnemySpawner : MonoBehaviour
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("OnSceneLoaded: " + scene.name);
-
         if (scene.name == "Tutorial")
         {
             Instantiate(slime, new Vector2(2.8f, 2.7f), slime.transform.rotation);
